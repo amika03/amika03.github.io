@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang=“en”> 
+
+<head>          <!-- ส่วนหัว -->
+    <link rel="icon" href="smile_6983867.png">
+    <title>MI KAA</title>
+    <link rel="stylesheet" href="RESU.css">
+    <script src="RESU.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+</head>
+
+<html>
+    <body align="center" >
+        
+        <b><h2 style="color: #050505;" align="center"><big><big>RESUME</big></big><h2></b>
+        
+        <p style="background-color: cadetblue;" align="center">INSTRUMENTATION AND AUTOMATON ENGINEERING</p>
+        <img src="mika.jpg" alt="oh nooo!!!" height="300" width="210"  > <br>
+
+        <div class="mika00" style="background-color: cadetblue;"><p>PERSONAL RECORD</p></div>
+        <div class="mika0">         
+        <h3 style="color: #0b0b0b;" align="left"> Name : Amika Sangsawang Nickname : Mika. <b>Age</b> 22.<br> <b>Gender :</b> female.<b>Birthday :</b> 3 July 2001.<b>Weight :</b> 55 kg. <b>Height :</b> 165 cm.<br><b>Ethnicity :</b> Thai.<b> Nationality :</b> Thai. <b>Religion :</b> Buddhist.</h3>   
+        </div>
+
+       
+        <div style="background-color: cadetblue;"class="mika11">EDUCATION</div>
+
+        <div class="mika1"> 
+        <ul align="left">
+            <li >DIPLOMA OF VOCATIONAL EDUCATION IN ELECTRONICS (GPAX 3.74)</li>
+            <li >BACHELOR OF ENGINEERING (INSTRUMENTATION AND AUTOMATION ENGINEERING)(GPAX 3.00)</li>
+        </ul>
+
+        </div>
+
+        <div style="background-color: cadetblue;" class="mika2">EXPERIENCE</div>
+        <div class="mika3">
+        <ul align="left" id="imageContainer" >
+            <li>PEA , Provincial Electricity Authority <button id="button" onclick="pea()">Certificate</button></li>
+            <p>A trainee in electronic technician works,
+            maintain and repair electric meters, Various
+            document work within the office.</p>
+            <li>ADITYA BIRLA CHEMICALS (SULPHITESDIVITION) <button id="button" onclick="ady()">Certificate</button></li>
+            <p>Position instrument dept I am an intern work about Write a program to control and repair all measuring equipment within the factory. Test device performance. </p>
+        </ul>    
+        </div>
+
+        <div>
+        <div style="background-color: cadetblue;">SKILL</div> <br><br>
+        <table>
+            <tr>
+                <th>PCB DESIGN</th>
+                <th>IMAGE PROCESSING</th>
+                <th>PLC PROGRAMMING AND HMI DESIGN</th>
+                <th>SKILL IN USING TOOLS</th>
+            </tr>
+
+            <tr>
+                <td><li>Proteus And OrCAD</li></td>
+                <td><li>VS Code, Python, Yolo Model</li></td>
+                <td><li>GX Work3, Omron And Siemen</li></td>
+                <td><li> Oscilloscope, Multimeter, LogicAnalyzers</li></td>
+            </tr>
+        </table>
+        </div><br><br>
+         <div>
+        <div style="background-color: cadetblue;">CONTACT</div><br><br>
+        <a href="https://line.me/ti/p/iRBJZHCdkR" target="_blank"><img src="letter-l_17158408.png"alt="oh nooo!!!" height="50" width="50">MI KA</a>
+        <a href="https://www.facebook.com/profile.php?id=100079207810250&locale=th_TH" target="_blank"> <img src="facebook_5968764.png"alt="oh nooo!!!" height="50" width="50"> MI KA</a>  
+        <a href="https://www.instagram.com/mikqsss" target="_blank"> <img src="instagram_2111463.png"alt="oh nooo!!!" height="50" width="50">  mikqsss</a>
+        <img src="phone-call_8152208.png"alt="oh nooo!!!" height="50" width="50">  061-xxxx-xxx</a><br><br>
+        </div>
+
+        <div id="mika9"> 
+            <img id="hiddenpea" src="kk.jpg" alt="ไม่โชว์ siem" width="620px" height="527px">
+            <img id="hiddenady" src="oo.jpg" alt="ไม่โชว์ Thip" width="620px" height="527px">
+        </div><br><br>
+        <div style="background-color: cadetblue;">REST-API Method POST</div><br>
+        <div class="sensor-data">
+            <h2>Sensor Data All</h2>
+            <p id="timestamp">Timestamp: Loading...</p>
+            <p id="temperature">Temperature: Loading...</p>
+            <p id="humidity">Humidity: Loading...</p>
+            <p id="luxsensor">Lux Sensor: Loading...</p>
+            <p id="motion">Motion: Loading...</p>
+        </div>
+    
+        <div class="student-form">
+            <h2>Submit Student </h2>
+            <div class="form-group">
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" placeholder="Enter your student ID">
+            </div>
+            <div class="form-group">
+                <label for="student-name">Full Name :</label>
+                <input type="text" id="student-name" placeholder="Enter your full name">
+            </div>
+            <button id="submit-btn">Submit</button>
+        </div>
+    
+        <script>
+
+            function updateSensorData() {
+                fetch('http://206.189.146.138/api/sensors')
+                    .then(response => response.json())
+                    .then(data => {
+
+                        document.getElementById('timestamp').innerHTML = `Timestamp: ${data.timestamp}`;
+                        document.getElementById('temperature').innerHTML = `Temperature: ${data.temperature} °C`;
+                        document.getElementById('humidity').innerHTML = `Humidity: ${data.humidity} %`;
+                        document.getElementById('luxsensor').innerHTML = `Lux Sensor: ${data.luxsensor} lx`;
+                        document.getElementById('motion').innerHTML = `Motion: ${data.motion}`;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching sensor data:', error);
+                    });
+            }
+    
+            setInterval(updateSensorData, 1000);
+    
+            document.addEventListener('DOMContentLoaded', function () {
+ 
+                updateSensorData();
+        
+                document.getElementById('submit-btn').addEventListener('click', function () {
+
+                    const studentId = document.getElementById('student-id').value;
+                    const studentName = document.getElementById('student-name').value;
+
+                    const studentData = {
+                        id: studentId,
+                        name: studentName
+                    };
+    
+
+                    fetch('http://206.189.146.138/api/students', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(studentData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert('Data sent successfully: ' + JSON.stringify(data));
+                    })
+                    .catch(error => {
+                        console.error('Error sending student data:', error);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+
+

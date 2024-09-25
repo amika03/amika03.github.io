@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+html{
+    font-family: normal;
+}
+body{ background-color: rgb(165, 190, 209);
+      
+}
+.mika00{
+    padding-left: 0%;
+}
+.mika0{
+    padding-left: 23%;
+}
+.mika11{
+    padding-left: 0%;
+}
+.mika1{
+    padding-left: 9%;
+}
+.mika2{
+    padding-left: 0%;
+}
+.mika3{ 
+    padding-left: 5%;
+}
+
+#hiddenpea {
+    display: none;
+    }
+#hiddenady {
+    display: none;
+    }
+
+#button {
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #ffffff;
+    }
+#button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #ffffff;
+    transform: translateY(4px);
+    }
+
+
+#mika9{
+    position: absolute;
+    top: 75%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+body {
+    font-family: normal;
+    margin: 20px;
+}
+.sensor-data {
+    margin-bottom: 20px;
+}
+.sensor-data h2 {
+    color: #333;
+}
+.sensor-data p {
+    margin: 5px 0;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
