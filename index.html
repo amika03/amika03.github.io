@@ -103,7 +103,7 @@
         <script>
 
             function updateSensorData() {
-                fetch('http://206.189.146.138/api/sensors')
+                fetch('https://206.189.146.138/api/sensors')
                     .then(response => response.json())
                     .then(data => {
 
@@ -135,7 +135,7 @@
                     };
     
 
-                    fetch('http://206.189.146.138/api/students', {
+                    fetch('https://206.189.146.138/api/students', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
