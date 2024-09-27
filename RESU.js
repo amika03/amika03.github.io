@@ -27,7 +27,7 @@ function fetchSensorData() {
             document.getElementById('temperature').innerText = data.temperature;
             document.getElementById('humidity').innerText = data.humidity;
             document.getElementById('luxsensor').innerText = data.luxsensor;
-            document.getElementById('motion').innerText = data.motion ? 'Yes' : 'No';
+            document.getElementById('motion').innerText = data.motion ? 'True' : 'Fale';
         })
         .catch(error => console.error('Error fetching sensor data:', error));
 }
